@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_for :accounts, controllers: { registrations: "registrations" }
 
   get '/plans' => 'public#plans'
+  
+  post 'plan/subscribe' => 'subscriptions#choose_plan', ad: :choose_plan
 
   root to: 'public#home'
 
